@@ -230,6 +230,57 @@
 								</div>
 							</div>
 						</div>
+						
+						<div class="col-xl-12 col-lg-6">
+								<div class="row">
+									<div class="col-xl-4 col-md-12 col-lg-12">
+										<div class="card">
+											<div class="card-body">
+												<div class="row">
+													<div class="col">
+														<p class="mb-1">Today Revenue</p>
+														<h2 class="mb-0 font-weight-bold">$939k</h2>
+													</div>
+													<div class="col col-auto">
+														<div id="spark4"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-4 col-md-12 col-lg-12">
+										<div class="card">
+											<div class="card-body">
+												<div class="row">
+													<div class="col">
+														<p class="mb-1">Unique Visitors</p>
+														<h2 class="mb-0 font-weight-bold">2,896</h2>
+													</div>
+													<div class="col col-auto">
+														<div id="spark5"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-4 col-md-12 col-lg-12">
+										<div class="card">
+											<div class="card-body">
+												<div class="row">
+													<div class="col">
+														<p class="mb-1">Expenses</p>
+														<h2 class="mb-0 font-weight-bold">$3,211</h2>
+													</div>
+													<div class="col col-auto">
+														<div id="spark6"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 
 						<!--Row-->
 						<div class="row row-deck">
@@ -307,7 +358,7 @@
 									</div>
 								</div>
 							</div>
-
+							<!---EARNING REVENUE-->
 							<div class="col-xl-8 col-lg-7 col-md-12">
 								<div class="card card-block">
 									<div class="card-header d-sm-flex d-block">
@@ -328,6 +379,31 @@
 									<div class="card-body">
 										<div class="chart-container">
 											<canvas id="leads" class="h-400 chart-dropshadow-primary"></canvas>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!---New EARNING REVENUE-->
+							<div class="col-xl-12 col-lg-12 col-md-12">
+								<div class="card card-block">
+									<div class="card-header d-sm-flex d-block">
+										<h3 class="card-title">My Earning Revenue</h3>
+										<div class="ml-auto mt-4 mt-sm-0">
+											<a class="btn btn-white" href="#">Week</a>
+											<a class="btn btn-white" href="#">Month</a>
+											<a class="btn btn-primary" href="#">Year</a>
+											<div class="btn-group ml-3 mb-0">
+												<a href="#" class="option-dots" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+												<div class="dropdown-menu p-0">
+													<a class="dropdown-item" href="#"><i class="fa fa-download"></i> Download</a>
+													<a class="dropdown-item" href="#"><i class="fa fa-cog mr-2"></i> Settings</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="card-body">
+										<div class="chart-container">
+											<canvas id="new-leads" class="h-400 chart-dropshadow-primary"></canvas>
 										</div>
 									</div>
 								</div>
