@@ -21,7 +21,7 @@ class App extends BaseConfig
 	| environments.
 	|
 	*/
-	public $baseURL = 'http://192.168.10.10:91/';
+	public $baseURL = 'http://192.168.68.145:8080/rygel-dash-theme/';
 
 	/*
 	|--------------------------------------------------------------------------
