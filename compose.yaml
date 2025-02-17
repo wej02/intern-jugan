@@ -1,0 +1,35 @@
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile.php
+    volumes:
+      - .:/var/www
+    expose:
+      - "9000"
+    networks:
+      - app-network
+
+  composer:
+    image: composer/composer:latest
+    volumes:
+      - ./composer.json:/app/composer.json
+      - ./vendor:/app/vendor
+    command: sh -c "composer update --ignore-platform-req=ext-intl && composer dump-autoload"
+
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
+    volumes:
+      - .:/var/www
+    ports:
+      - "8080:8080"
+    depends_on:
+      - php
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
