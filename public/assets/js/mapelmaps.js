@@ -85,8 +85,8 @@
 				path: "M 24.267286,27.102843 15.08644,22.838269 6.3686216,27.983579 7.5874348,17.934248 0,11.2331 9.9341158,9.2868473 13.962641,0 l 4.920808,8.8464793 10.077199,0.961561 -6.892889,7.4136777 z",
 				width: 30,
 				height: 30,
-				latitude: 45.8188276,
-				longitude: 1.1060351,
+				latitude: 50.8188276,
+				longitude: 2.1060351,
 				attrs: {
 					opacity: 1
 				}
@@ -147,57 +147,75 @@
 		}
 	});
 
-	//Map with a legend for areas
-	$(".mapcontainer1").mapael({
-		map: {
-			name: "france_departments",
-			defaultArea: {
-				attrs: {
-					stroke: "#fff",
-					"stroke-width": 1
-				},
-				attrsHover: {
-					"stroke-width": 2
-				}
-			}
-		},
-		legend: {
-			area: {
-				title: "Population of France by department",
-				slices: [
-					{
-						max: 300000,
-						attrs: {
-							fill: "#D3DFEA"
-						},
-						label: "Less than de 300 000 inhabitants"
-					},
-					{
-						min: 300000,
-						max: 500000,
-						attrs: {
-							fill: "#8692d7"
-						},
-						label: "Between 100 000 and 500 000 inhabitants"
-					},
-					{
-						min: 500000,
-						max: 1000000,
-						attrs: {
-							fill: "#4454c3"
-						},
-						label: "Between 500 000 and 1 000 000 inhabitants"
-					},
-					{
-						min: 1000000,
-						attrs: {
-							fill: "#6874ca"
-						},
-						label: "More than 1 million inhabitants"
-					}
-				]
-			}
-		},
+	// Map with a legend for areas
+$(".mapcontainer1").mapael({
+    map: {
+        name: "france_departments",
+        defaultArea: {
+            attrs: {
+                stroke: "#fff",        // White stroke by default
+                "stroke-width": 1      // Default thin stroke
+            },
+            attrsHover: {
+                "stroke-width": 4      // Thicker stroke when hovered
+            }
+        }
+    },
+    legend: {
+        area: {
+            title: "Population of France by department",
+            slices: [
+                {
+                    max: 300000,
+                    attrs: {
+                        fill: "#F4C2C2" // Light pink
+                    },
+                    attrsHover: {
+                        stroke: "#000",    // Black stroke on hover
+                        "stroke-width": 4  // Thicker stroke when hovered
+                    },
+                    label: "Less than 300 000 inhabitants"
+                },
+                {
+                    min: 300000,
+                    max: 500000,
+                    attrs: {
+                        fill: "#FF8C94" // Soft red
+                    },
+                    attrsHover: {
+                        stroke: "#000",
+                        "stroke-width": 4  // Thicker stroke when hovered
+                    },
+                    label: "Between 300 000 and 500 000 inhabitants"
+                },
+                {
+                    min: 500000,
+                    max: 1000000,
+                    attrs: {
+                        fill: "#D94F70" // Dark pink
+                    },
+                    attrsHover: {
+                        stroke: "#000",
+                        "stroke-width": 4  // Thicker stroke when hovered
+                    },
+                    label: "Between 500 000 and 1 000 000 inhabitants"
+                },
+                {
+                    min: 1000000,
+                    attrs: {
+                        fill: "#A51C30" // Deep red
+                    },
+                    attrsHover: {
+                        stroke: "#000",
+                        "stroke-width": 4  // Thicker stroke when hovered
+                    },
+                    label: "More than 1 million inhabitants"
+                }
+            ]
+        }
+    },
+
+		
 		areas: {
 			"department-59": {
 				value: "2617939",
@@ -9941,157 +9959,29 @@
 			}
 		},
 		plots: {
-			'paris': {
-				latitude: 48.86,
-				longitude: 2.3444,
-				tooltip: {content: "Paris<br />Population: 500000000"}
+			'philippines': {
+				latitude: 12.8797,
+				longitude: 121.7740,
+				text: { content: "Philippines" }
 			},
-			'newyork': {
-				latitude: 40.667,
-				longitude: -73.833,
-				tooltip: {content: "New york<br />Population: 200001"}
-			},
-			'sanfrancisco': {
-				latitude: 37.792032,
-				longitude: -122.394613,
-				tooltip: {content: "San Francisco"}
-			},
-			'brasilia': {
-				latitude: -15.781682,
-				longitude: -47.924195,
-				tooltip: {content: "Brasilia<br />Population: 200000001"}
-			},
-			'roma': {
-				latitude: 41.827637,
-				longitude: 12.462732,
-				tooltip: {content: "Roma"}
-			},
-			'miami': {
-				latitude: 25.789125,
-				longitude: -80.205674,
-				tooltip: {content: "Miami"}
-			},
-
-			// Size=0 in order to make plots invisible
-			'tokyo': {
-				latitude: 35.687418,
-				longitude: 139.692306,
-				size: 0,
-				text: {content: 'Tokyo'}
-			},
-			'sydney': {
-				latitude: -33.917,
-				longitude: 151.167,
-				size: 0,
-				text: {content: 'Sydney'}
-			},
-			'plot1': {
-				latitude: 22.906561,
-				longitude: 86.840170,
-				size: 0,
-				text: {content: 'Plot1', position: 'left', margin: 5}
-			},
-			'plot2': {
-				latitude: -0.390553,
-				longitude: 115.586762,
-				size: 0,
-				text: {content: 'Plot2'}
-			},
-			'plot3': {
-				latitude: 44.065626,
-				longitude: 94.576079,
-				size: 0,
-				text: {content: 'Plot3'}
+			'usa': {
+				latitude: 37.0902,
+				longitude: -95.7129,
+				text: { content: "United States" }
 			}
 		},
 		// Links allow you to connect plots between them
 		links: {
-			'link1': {
-				factor: -0.3
-				// The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
-				, between: [{latitude: 24.708785, longitude: -5.402427}, {x: 560, y: 280}]
-				, attrs: {
-					"stroke-width": 2
-				}
-				, tooltip: {content: "Link"}
-			}
-			, 'parisnewyork': {
-				// ... Or with IDs of plotted points
-				factor: -0.3
-				, between: ['paris', 'newyork']
-				, attrs: {
-					"stroke-width": 2
-				}
-				, tooltip: {content: "Paris - New-York"}
-			}
-			, 'parissanfrancisco': {
-				// The curve can be inverted by setting a negative factor
-				factor: -0.5
-				, between: ['paris', 'sanfrancisco']
-				, attrs: {
-					"stroke-width": 4
-				}
-				, tooltip: {content: "Paris - San - Francisco"}
-			}
-			, 'parisbrasilia': {
-				factor: -0.8
-				, between: ['paris', 'brasilia']
-				, attrs: {
-					"stroke-width": 1
-				}
-				, tooltip: {content: "Paris - Brasilia"}
-			}
-			, 'romamiami': {
-				factor: 0.2
-				, between: ['roma', 'miami']
-				, attrs: {
-					"stroke-width": 4
-				}
-				, tooltip: {content: "Roma - Miami"}
-			}
-			, 'sydneyplot1': {
-				factor: -0.2
-				, between: ['sydney', 'plot1']
-				, attrs: {
+			'usaphilippines': {
+				factor: 0.3,
+				between: ['usa', 'philippines'],
+				attrs: {
 					stroke: "#f72d66",
-					"stroke-width": 3,
+					"stroke-width": 5,
 					"stroke-linecap": "round",
 					opacity: 0.6
-				}
-				, tooltip: {content: "Sydney - Plot1"}
-			}
-			, 'sydneyplot2': {
-				factor: -0.1
-				, between: ['sydney', 'plot2']
-				, attrs: {
-					stroke: "#f72d66",
-					"stroke-width": 8,
-					"stroke-linecap": "round",
-					opacity: 0.6
-				}
-				, tooltip: {content: "Sydney - Plot2"}
-			}
-			, 'sydneyplot3': {
-				factor: 0.2
-				, between: ['sydney', 'plot3']
-				, attrs: {
-					stroke: "#f72d66",
-					"stroke-width": 4,
-					"stroke-linecap": "round",
-					opacity: 0.6
-				}
-				, tooltip: {content: "Sydney - Plot3"}
-			}
-			, 'sydneytokyo': {
-				factor: 0.2
-				, between: ['sydney', 'tokyo']
-				, attrs: {
-					stroke: "#f72d66",
-					"stroke-width": 6,
-					"stroke-linecap": "round",
-					opacity: 0.6
-				}
-				, tooltip: {content: "Sydney - Plot2"}
+				},
+				tooltip: { content: "United States - Philippines" }
 			}
 		}
 	});

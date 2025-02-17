@@ -14,7 +14,7 @@ $(function() {
 		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap<\/a> contributors, ' + '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA<\/a>, ' + 'Imagery © <a href="http://mapbox.com">Mapbox<\/a>',
 		id: 'mapbox.streets'
 	}).addTo(mymap2);
-	L.marker([45.5, -0.011]).addTo(mymap2).bindPopup("<b>Hello world!<\/b><br />I am a popup.").openPopup();
+	L.marker([45.5, -0.011]).addTo(mymap2).bindPopup("<b>I am Louie Jay!<\/b><br />My Favorite City is United States").openPopup();
 	// Adding a Circle
 	var mymap3 = L.map('leaflet3').setView([45.505, -0.012], 13);
 	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
