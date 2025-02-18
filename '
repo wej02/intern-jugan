@@ -1,0 +1,12 @@
+modified jvectormap.js 
+modified map-leafleft.js
+modified mapelpmaps.js
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch map1-jugan
+# Changes to be committed:
+#	modified:   public/assets/js/jvectormap.js
+#	modified:   public/assets/js/map-leafleft.js
+#	modified:   public/assets/js/mapelmaps.js
+#
