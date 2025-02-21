@@ -75,8 +75,9 @@
 								<div class="card">
 									<div class="card-header">
 										<h4 class="card-title">Main Read</h4>
-									</div>
-									<div class="card-body">
+										<button type="button" class="btn btn-info ml-auto" id="download-email"><i class="si si-printer"></i> Download Email</button>
+										</div>
+									<div class="card-body" id="email-content">
 										<div class="email-media">
 											<div class="mt-0 d-sm-flex">
 												<img class="mr-2 rounded-circle avatar avatar-lg" src="<?php echo base_url('public/assets/images/users/2.jpg'); ?>" alt="avatar">
@@ -102,7 +103,7 @@
 												</div>
 											</div>
 										</div>
-										<div class="eamil-body mt-5">
+										<div class="email-body mt-5">
 											<h6>Hi Sir/Madam</h6>
 											<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
 											<p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
@@ -156,6 +157,38 @@
 								</div>
 							</div>
 						</div>
-<?= $this->include('layout/footer'); ?>
-	</body>
+						<?= $this->include('layout/footer'); ?>
+						
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+document.getElementById('download-email').addEventListener('click', function () {
+    // Clone the email content to preserve original structure
+    const originalContent = document.getElementById('email-content');
+    const clonedContent = originalContent.cloneNode(true);
+    
+    // Remove attachments section starting from <hr>
+    const emailBody = clonedContent.querySelector('.email-body');
+    if (emailBody) {
+        const hrElement = emailBody.querySelector('hr');
+        if (hrElement) {
+            // Remove all elements from <hr> onwards
+            while (hrElement.nextElementSibling) {
+                hrElement.nextElementSibling.remove();
+            }
+            hrElement.remove(); // Remove the <hr> itself
+        }
+    }
+
+		// Configure and generate PDF from modified clone
+		html2pdf().set({
+			margin: 10,
+			filename: 'Email.pdf',
+			image: { type: 'jpeg', quality: 0.98 },
+			html2canvas: { scale: 2 },
+			jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait' }
+		}).from(clonedContent).save();
+	});
+</script>
+</body>
 </html>
+
